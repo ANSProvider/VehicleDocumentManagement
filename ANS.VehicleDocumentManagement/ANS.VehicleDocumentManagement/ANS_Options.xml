@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<GeneralOption>
+  <ServerDetail>
+    <ServerType>MSSQL</ServerType>
+    <ServerName>.</ServerName>
+    <UserName>sa</UserName>
+    <Password>admin@123</Password>
+    <DbName>JustLittle</DbName>
+    <IsWinAuth>false</IsWinAuth>
+  </ServerDetail>
+</GeneralOption>

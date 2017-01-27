@@ -1,0 +1,7 @@
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\obj\Debug\ANS.VehicleDocumentManagement.BL.csprojResolveAssemblyReference.cache
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\bin\Debug\ANS.VehicleDocumentManagement.BL.dll
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\bin\Debug\ANS.VehicleDocumentManagement.BL.pdb
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\bin\Debug\ANS.VehicleDocumentManagement.Server.dll
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\bin\Debug\ANS.VehicleDocumentManagement.Server.pdb
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\obj\Debug\ANS.VehicleDocumentManagement.BL.dll
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.BL\obj\Debug\ANS.VehicleDocumentManagement.BL.pdb

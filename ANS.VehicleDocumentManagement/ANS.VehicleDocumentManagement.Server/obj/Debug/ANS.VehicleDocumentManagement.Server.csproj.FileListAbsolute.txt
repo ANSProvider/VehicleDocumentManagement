@@ -1,0 +1,5 @@
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.Server\bin\Debug\ANS.VehicleDocumentManagement.Server.dll.config
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.Server\bin\Debug\ANS.VehicleDocumentManagement.Server.dll
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.Server\bin\Debug\ANS.VehicleDocumentManagement.Server.pdb
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.Server\obj\Debug\ANS.VehicleDocumentManagement.Server.dll
+D:\Project\ANS.VehicleDocumentManagement\ANS.VehicleDocumentManagement.Server\obj\Debug\ANS.VehicleDocumentManagement.Server.pdb
