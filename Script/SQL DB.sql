@@ -18,10 +18,6 @@ CREATE TABLE [dbo].[tblCarDocumentDetails](
 
 GO
 
-
-
-
-
 CREATE TABLE [dbo].[tblDocumentMaster](
 	[DocumentId] [int] NOT NULL,
 	[DocumentName] [nvarchar](50) not NULL,

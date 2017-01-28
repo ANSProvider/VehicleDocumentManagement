@@ -44,9 +44,31 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Telerik.WinControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\TelerikCommon.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ANSSetting.cs" />
+    <Compile Include="FrmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerDetails.designer.cs">
+      <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +77,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCustomerDetails.resx">
+      <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +91,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +105,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ANS.VehicleDocumentManagement.BL\ANS.VehicleDocumentManagement.BL.csproj">
+      <Project>{22fa43bd-4df0-4ae8-a9f2-b26a8ec18670}</Project>
+      <Name>ANS.VehicleDocumentManagement.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ANS.VehicleDocumentManagement.Server\ANS.VehicleDocumentManagement.Server.csproj">
+      <Project>{90b08228-97fd-4c62-aa0f-4cdf793050ea}</Project>
+      <Name>ANS.VehicleDocumentManagement.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ANS_Options.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ic_autorenew.png" />
+    <Content Include="Resources\ic_help_outline.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

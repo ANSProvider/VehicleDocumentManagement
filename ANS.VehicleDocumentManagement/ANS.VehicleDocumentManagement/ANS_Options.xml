@@ -5,7 +5,7 @@
     <ServerName>.</ServerName>
     <UserName>sa</UserName>
     <Password>admin@123</Password>
-    <DbName>JustLittle</DbName>
+    <DbName>VehicleDocument</DbName>
     <IsWinAuth>false</IsWinAuth>
   </ServerDetail>
 </GeneralOption>

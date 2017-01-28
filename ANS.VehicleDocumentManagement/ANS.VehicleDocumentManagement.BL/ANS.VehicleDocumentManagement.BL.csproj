@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductMaster.cs" />
+    <Compile Include="CarRegistration.cs" />
+    <Compile Include="CustomerDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
