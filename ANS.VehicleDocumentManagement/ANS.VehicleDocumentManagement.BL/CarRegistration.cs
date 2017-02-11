@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace ANS.VehicleDocumentManagement.BL
 {
-    [PetaPoco.TableName("tblCustomerDetails")]
+    [PetaPoco.TableName("tblCarRegistration")]
     [PetaPoco.PrimaryKey("CarRegistrationID", autoIncrement = true)]
     public class CarRegistration : BaseClass
     {

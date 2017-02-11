@@ -16,7 +16,7 @@ namespace ANS.VehicleDocumentManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCustomerDetails());
+            Application.Run(new FrmCustomerList());
         }
     }
 }

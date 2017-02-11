@@ -63,6 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ANSSetting.cs" />
+    <Compile Include="FrmCarRegistrationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarRegistrationDetails.designer.cs">
+      <DependentUpon>FrmCarRegistrationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerList.designer.cs">
+      <DependentUpon>FrmCustomerList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCustomerDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCarRegistrationDetails.resx">
+      <DependentUpon>FrmCarRegistrationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerList.resx">
+      <DependentUpon>FrmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomerDetails.resx">
       <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
     </EmbeddedResource>
