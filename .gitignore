@@ -1,0 +1,11 @@
+Thumbs.db
+[Bb]in
+[Dd]ebug*/
+obj/
+[Rr]elease*/
+*.dll
+*.pdb
+*.obj
+*.log
+*.lib
+*.suo
