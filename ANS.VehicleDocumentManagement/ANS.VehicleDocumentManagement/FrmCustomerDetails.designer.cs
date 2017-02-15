@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomerDetails));
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPermantAddress = new System.Windows.Forms.TextBox();
@@ -45,9 +46,9 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRegisterCar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnRegisterCar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -231,6 +232,20 @@
             this.panel2.Size = new System.Drawing.Size(516, 54);
             this.panel2.TabIndex = 35;
             // 
+            // btnRegisterCar
+            // 
+            this.btnRegisterCar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(117)))), ((int)(((byte)(220)))));
+            this.btnRegisterCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisterCar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnRegisterCar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRegisterCar.Location = new System.Drawing.Point(189, 12);
+            this.btnRegisterCar.Name = "btnRegisterCar";
+            this.btnRegisterCar.Size = new System.Drawing.Size(115, 31);
+            this.btnRegisterCar.TabIndex = 5;
+            this.btnRegisterCar.Text = "&Register Car";
+            this.btnRegisterCar.UseVisualStyleBackColor = false;
+            this.btnRegisterCar.Click += new System.EventHandler(this.btnRegisterCar_Click);
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -261,20 +276,6 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnRegisterCar
-            // 
-            this.btnRegisterCar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(117)))), ((int)(((byte)(220)))));
-            this.btnRegisterCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterCar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnRegisterCar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnRegisterCar.Location = new System.Drawing.Point(189, 12);
-            this.btnRegisterCar.Name = "btnRegisterCar";
-            this.btnRegisterCar.Size = new System.Drawing.Size(115, 31);
-            this.btnRegisterCar.TabIndex = 5;
-            this.btnRegisterCar.Text = "&Register Car";
-            this.btnRegisterCar.UseVisualStyleBackColor = false;
-            this.btnRegisterCar.Click += new System.EventHandler(this.btnRegisterCar_Click);
-            // 
             // FrmCustomerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,8 +284,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblHeaderTitle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCustomerDetails";
-            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Customer Details";
             this.Load += new System.EventHandler(this.FrmCustomerDetails_Load);
             this.panel1.ResumeLayout(false);

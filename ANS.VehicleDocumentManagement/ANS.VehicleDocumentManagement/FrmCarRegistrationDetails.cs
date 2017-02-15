@@ -13,13 +13,12 @@ namespace ANS.VehicleDocumentManagement
 {
     public partial class FrmCarRegistrationDetails : Form
     {
-        public String CustomerId { get; set; }
         public String Mode { get; set; }
-        public List<CustomerDetails> cListCustomerDetails = null;
+        
+        public CustomerDetails customerDetails { get; set; }
         public FrmCarRegistrationDetails()
         {
             InitializeComponent();
-            ANSSetting.Current.GetAllSetting();
             cSqlConnectionString.ConnectionString = ANSSetting.Current.GetConnectionString();
         }
 
@@ -32,7 +31,7 @@ namespace ANS.VehicleDocumentManagement
         private void FrmCarRegistrationDetails_Load(object sender, EventArgs e)
         {
 
-            // FillProduct();
+            DispalyCustomerDeatils();
             EditRecord();
             radGridView1.AutoGenerateColumns = false;
             radGridView1.DataSource = mList;
@@ -45,6 +44,14 @@ namespace ANS.VehicleDocumentManagement
             //}
         }
 
+        private void DispalyCustomerDeatils()
+        {
+            lblContactPersonVal.Text = customerDetails.ContactPerson;
+            lblCustomerNameVal.Text = customerDetails.CustomerName;
+            lblMobileNoVal.Text = customerDetails.MobileNo;
+            lblEmailIdVal.Text = customerDetails.EmailId;
+        }
+        
         //private void FillProduct()
         //{
         //    GridViewComboBoxColumn mGridViewComboBoxColumn = (GridViewComboBoxColumn)radGridView1.Columns["gvCboProductId"];
@@ -60,7 +67,7 @@ namespace ANS.VehicleDocumentManagement
             if (Mode == "Edit")
             {
                 CarRegistration cCarRegistration = new CarRegistration(cSqlConnectionString);
-                cCarRegistration.FilterCustomerID = Convert.ToInt16(CustomerId);
+                cCarRegistration.FilterCustomerID = customerDetails.CustomerID;
                 mList = cCarRegistration.Load();
                 radGridView1.DataSource = mList;
 
@@ -112,11 +119,8 @@ namespace ANS.VehicleDocumentManagement
             foreach (var item in mList)
             {
                 item.cDbConnection = cDbConnection;
-                item.CustomerID = Convert.ToInt64(CustomerId);
-
-
+                item.CustomerID = customerDetails.CustomerID;
                 item.UpdateOn = DateTime.Now;
-
                 if (item.CarRegistrationID == 0)
                 {
                     item.CreatedOn = DateTime.Now;
@@ -124,6 +128,21 @@ namespace ANS.VehicleDocumentManagement
                 item.Save();
             }
         }
+
+        private void btnAddDocuments_Click(object sender, EventArgs e)
+        {
+            FrmCarDocumentDetails frmCarDocumentDetails = new FrmCarDocumentDetails();
+            frmCarDocumentDetails.Mode = "Edit";
+            if (radGridView1.SelectedRows.Count > 0)
+            {
+                frmCarDocumentDetails.carRegistration = mList.Where(e1 => e1.CarRegistrationID == Convert.ToInt64(radGridView1.SelectedRows[0].Cells["CarRegistrationID"].Value)).FirstOrDefault();
+                frmCarDocumentDetails.ShowDialog();
+
+            }
+        }
+
+
+
 
         //private void btnSavePrint_Click(object sender, EventArgs e)
         //{

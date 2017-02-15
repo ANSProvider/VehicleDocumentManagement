@@ -9,39 +9,44 @@ using System.Linq;
 
 namespace ANS.VehicleDocumentManagement.BL
 {
-    [PetaPoco.TableName("tblCustomerDetails")]
-    [PetaPoco.PrimaryKey("CustomerID", autoIncrement = true)]
-    public class CustomerDetails : BaseClass
+    [PetaPoco.TableName("tblCarDocumentDetails")]
+    [PetaPoco.PrimaryKey("CarDocumentDetailID", autoIncrement = true)]
+    public class CarDocumentDetails : BaseClass
     {
         [PetaPoco.Column]
-        public Int64 CustomerID { get; set; }
+        public Int64 CarDocumentDetailID { get; set; }
         [PetaPoco.Column]
-        public string CustomerName { get; set; }
+        public Int64 CarRegistrationID { get; set; }
         [PetaPoco.Column]
-        public string CurrentAddress { get; set; }
-        [PetaPoco.Column]
-        public string PermantAddress { get; set; }
-        [PetaPoco.Column]
-        public string MobileNo { get; set; }
-        [PetaPoco.Column]
-        public string OfficeNo { get; set; }
-        [PetaPoco.Column]
-        public string EmailId { get; set; }
-        [PetaPoco.Column]
-        public string ContactPerson { get; set; }
+        public Int64 DocumentId { get; set; }
 
         [PetaPoco.Column]
-        public DateTime? CreatedOn { get; set; }
+        public DateTime IssueDate { get; set; }
+
         [PetaPoco.Column]
-        public DateTime? UpdatedOn { get; set; }
+        public Int64 Validity { get; set; }
+
+
+        [PetaPoco.Column]
+        public DateTime ExpireDate { get; set; }
+
+
+        [PetaPoco.Column]
+        public DateTime RenewDate { get; set; }
+
+        [PetaPoco.Column]
+        public DateTime CreatedOn { get; set; }
+
+        [PetaPoco.Column]
+        public DateTime UpdateOn { get; set; }
+
 
         [PetaPoco.Ignore]
-        public Int64? FilterCustomerID { get; set; }
-        [PetaPoco.Ignore]
-        public String FilterCustomerName { get; set; }
+        public Int64? FilterCarDocumentDetailID { get; set; }
 
         [PetaPoco.Ignore]
-        public String FilterContactPerson { get; set; }
+        public Int64? FilterCarRegistrationID { get; set; }
+
 
         [PetaPoco.Ignore]
         public string this[string columnName]
@@ -77,29 +82,27 @@ namespace ANS.VehicleDocumentManagement.BL
             }
         }
 
-        public CustomerDetails() : base() { }
-        public CustomerDetails(Database cDbConn) : base(cDbConn) { }
-        public CustomerDetails(SqlConnectionStringBuilder pConnectionString) : base(pConnectionString) { }
+        public CarDocumentDetails() : base() { }
+        public CarDocumentDetails(Database cDbConn) : base(cDbConn) { }
+        public CarDocumentDetails(SqlConnectionStringBuilder pConnectionString) : base(pConnectionString) { }
 
-        public List<CustomerDetails> Load()
+        public List<CarDocumentDetails> Load()
         {
             string mQuery = "";
-            mQuery = "Select * From tblCustomerDetails Where 1=1 ";
-            if (FilterCustomerID.HasValue)
-                mQuery += " And CustomerID = '" + FilterCustomerID + "'";
-            if (!String.IsNullOrEmpty(FilterCustomerName))
-                mQuery += " And CustomerName like '%" + FilterCustomerName + "%'";
-            if (!String.IsNullOrEmpty(FilterContactPerson))
-                mQuery += " And ContactPerson like '%" + FilterCustomerName + "%'";
+            mQuery = "Select * From tblCarDocumentDetails Where 1=1 ";
+            if (FilterCarRegistrationID.HasValue)
+                mQuery += " And CarRegistrationID = '" + FilterCarRegistrationID + "'";
+            if (FilterCarDocumentDetailID.HasValue)
+                mQuery += " And CarDocumentDetailID = '" + FilterCarDocumentDetailID + "'";
 
-            
-            return cDbConnection.Fetch<CustomerDetails>(mQuery).ToList();
+            return cDbConnection.Fetch<CarDocumentDetails>(mQuery).ToList();
+
         }
-        public CustomerDetails EditValue(Int64 CustomerID)
+        public CarDocumentDetails EditValue(long CarDocumentDetailID)
         {
-            FilterCustomerID = CustomerID;
+            FilterCarDocumentDetailID = CarDocumentDetailID;
 
-            List<CustomerDetails> mList = Load();
+            List<CarDocumentDetails> mList = Load();
             if (mList == null) { return null; }
             if (mList.Count > 0)
             {

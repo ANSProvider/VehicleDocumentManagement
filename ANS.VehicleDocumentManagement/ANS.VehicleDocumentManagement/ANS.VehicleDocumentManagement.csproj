@@ -63,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ANSSetting.cs" />
+    <Compile Include="FrmCarDocumentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarDocumentDetails.designer.cs">
+      <DependentUpon>FrmCarDocumentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCarRegistrationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCarDocumentDetails.resx">
+      <DependentUpon>FrmCarDocumentDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCarRegistrationDetails.resx">
       <DependentUpon>FrmCarRegistrationDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,8 +147,10 @@
     <Content Include="ANS_Options.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\favicon.ico" />
     <Content Include="Resources\ic_autorenew.png" />
     <Content Include="Resources\ic_help_outline.png" />
+    <None Include="Resources\Kingstar-Pluto-B1-2-5-Ton-Single-Cab-Truck-Automobile-Lorry.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

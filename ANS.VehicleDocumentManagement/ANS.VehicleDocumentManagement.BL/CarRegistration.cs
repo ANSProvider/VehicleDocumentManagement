@@ -45,7 +45,13 @@ namespace ANS.VehicleDocumentManagement.BL
         public Int64? FilterCarRegistrationID { get; set; }
 
         [PetaPoco.Ignore]
+        public String FilterCarRegistrationNo { get; set; }
+
+        [PetaPoco.Ignore]
         public Int64? FilterCustomerID { get; set; }
+
+        [PetaPoco.Ignore]
+        public CustomerDetails CarCustomerDetails { get; set; }
 
         [PetaPoco.Ignore]
         public string this[string columnName]
@@ -89,18 +95,20 @@ namespace ANS.VehicleDocumentManagement.BL
         {
             string mQuery = "";
             mQuery = "Select * From tblCarRegistration Where 1=1 ";
+            if (FilterCarRegistrationID.HasValue)
+                mQuery += " And CarRegistrationID = '" + FilterCarRegistrationID + "'";
             if (FilterCustomerID.HasValue)
                 mQuery += " And CustomerID = '" + FilterCustomerID + "'";
-            if (FilterCarRegistrationID.HasValue)
-                mQuery += " And CarRegistrationID ='" + FilterCarRegistrationID + "'";
+            if (!string.IsNullOrEmpty(FilterCarRegistrationNo))
+                mQuery += " And CarRegistrationNo like '%" + FilterCarRegistrationNo + "%'";
 
-            Debug.WriteLine(mQuery);
+
             return cDbConnection.Fetch<CarRegistration>(mQuery).ToList();
 
         }
-        public CarRegistration EditValue(int CarRegistrationID)
+        public CarRegistration EditValue(long CarRegistrationID)
         {
-            FilterCustomerID = CarRegistrationID;
+            FilterCarRegistrationID = CarRegistrationID;
 
             List<CarRegistration> mList = Load();
             if (mList == null) { return null; }

@@ -11,11 +11,10 @@ namespace ANS.VehicleDocumentManagement
     {
         public Int64 CustomerID { get; set; }
         public String Mode { get; set; }
-        public List<CustomerDetails> cListCustomerDetails = null;
+        public CustomerDetails customerDetails = null;
         public FrmCustomerDetails()
         {
             InitializeComponent();
-            ANSSetting.Current.GetAllSetting();
             cSqlConnectionString.ConnectionString = ANSSetting.Current.GetConnectionString();
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -56,6 +55,7 @@ namespace ANS.VehicleDocumentManagement
             CustomerDetails cCustomerDetails = new CustomerDetails(cSqlConnectionString);
             SaveData(cCustomerDetails);
             MessageBox.Show("Data Saved Successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            customerDetails = cCustomerDetails;
             btnRegisterCar.Visible = true;
             btnRegisterCar.Enabled = true;
         }
@@ -68,12 +68,8 @@ namespace ANS.VehicleDocumentManagement
             }
             else
             {
-
                 cCustomerDetails.CreatedOn = DateTime.Now;
-
             }
-
-
             cCustomerDetails.CustomerName = txtCustomerName.Text;
             cCustomerDetails.CurrentAddress = txtCurrentAddress.Text;
             cCustomerDetails.PermantAddress = txtPermantAddress.Text;
@@ -84,18 +80,16 @@ namespace ANS.VehicleDocumentManagement
             cCustomerDetails.UpdatedOn = DateTime.Now;
             cCustomerDetails.Save();
             CustomerID = cCustomerDetails.CustomerID;
-          
         }
 
         private void btnRegisterCar_Click(object sender, EventArgs e)
         {
             FrmCarRegistrationDetails frmCarRegistrationDetails = new FrmCarRegistrationDetails();
             frmCarRegistrationDetails.Mode = "Edit";
-            if (CustomerID > 0)
+            if (customerDetails !=null)
             {
-                frmCarRegistrationDetails.CustomerId = CustomerID.ToString();
+                frmCarRegistrationDetails.customerDetails = customerDetails;
                 frmCarRegistrationDetails.ShowDialog();
-
             }
 
         }

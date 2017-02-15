@@ -12,10 +12,10 @@ namespace ANS.VehicleDocumentManagement
     {
 
         SqlConnectionStringBuilder cSqlConnectionString = new SqlConnectionStringBuilder();
+        List<CustomerDetails> cAllCustomers = null;
         public FrmCustomerList()
         {
             InitializeComponent();
-            ANSSetting.Current.GetAllSetting();
             cSqlConnectionString.ConnectionString = ANSSetting.Current.GetConnectionString();
         }
 
@@ -23,7 +23,8 @@ namespace ANS.VehicleDocumentManagement
         {
             CustomerDetails cCustomers = new CustomerDetails(cSqlConnectionString);
             cCustomers.FilterCustomerName = txtCustomerName.Text;
-            List<CustomerDetails> cAllCustomers = cCustomers.Load();
+            cCustomers.FilterContactPerson = txtContactPerson.Text;
+            cAllCustomers = cCustomers.Load();
 
             radGridView1.DataSource = cAllCustomers;
             radGridView1.Columns["FilterCustomerID"].IsVisible = false;
@@ -32,6 +33,7 @@ namespace ANS.VehicleDocumentManagement
             radGridView1.Columns["connectionString"].IsVisible = false;
             radGridView1.Columns["CreatedOn"].IsVisible = false;
             radGridView1.Columns["UpdatedOn"].IsVisible = false;
+            radGridView1.Columns["FilterContactPerson"].IsVisible = false;
             radGridView1.Columns["CustomerName"].HeaderText = "Customer Name";
             radGridView1.Columns["ContactPerson"].HeaderText = "Contact Person";
             radGridView1.Columns["EmailId"].HeaderText = "Email Id";
@@ -82,12 +84,11 @@ namespace ANS.VehicleDocumentManagement
             frmCarRegistrationDetails.Mode = "Edit";
             if (radGridView1.SelectedRows.Count > 0)
             {
-                frmCarRegistrationDetails.CustomerId = radGridView1.SelectedRows[0].Cells["CustomerID"].Value.ToString();
+                frmCarRegistrationDetails.customerDetails = cAllCustomers.Where(e1 => e1.CustomerID == Convert.ToInt64(radGridView1.SelectedRows[0].Cells["CustomerID"].Value)).FirstOrDefault();
                 frmCarRegistrationDetails.ShowDialog();
 
             }
         }
-
-       
+        
     }
 }

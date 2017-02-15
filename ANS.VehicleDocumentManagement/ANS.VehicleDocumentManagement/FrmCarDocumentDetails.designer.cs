@@ -1,6 +1,6 @@
 ﻿namespace ANS.VehicleDocumentManagement
 {
-    partial class FrmCarRegistrationDetails
+    partial class FrmCarDocumentDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn3 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarRegistrationDetails));
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarDocumentDetails));
             this.lblHeaderTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEmailIdVal = new System.Windows.Forms.Label();
@@ -51,7 +47,6 @@
             this.lblContactNo = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddDocuments = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -73,7 +68,7 @@
             this.lblHeaderTitle.Name = "lblHeaderTitle";
             this.lblHeaderTitle.Size = new System.Drawing.Size(964, 41);
             this.lblHeaderTitle.TabIndex = 33;
-            this.lblHeaderTitle.Text = "Car Registration Form";
+            this.lblHeaderTitle.Text = "Car Document Details Form";
             this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -178,7 +173,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnAddDocuments);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -187,21 +181,6 @@
             this.panel2.Size = new System.Drawing.Size(964, 54);
             this.panel2.TabIndex = 35;
             // 
-            // btnAddDocuments
-            // 
-            this.btnAddDocuments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddDocuments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(117)))), ((int)(((byte)(220)))));
-            this.btnAddDocuments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDocuments.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddDocuments.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddDocuments.Location = new System.Drawing.Point(706, 16);
-            this.btnAddDocuments.Name = "btnAddDocuments";
-            this.btnAddDocuments.Size = new System.Drawing.Size(135, 26);
-            this.btnAddDocuments.TabIndex = 5;
-            this.btnAddDocuments.Text = "Add Documents";
-            this.btnAddDocuments.UseVisualStyleBackColor = false;
-            this.btnAddDocuments.Click += new System.EventHandler(this.btnAddDocuments_Click);
-            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -209,7 +188,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Location = new System.Drawing.Point(600, 16);
+            this.btnSave.Location = new System.Drawing.Point(655, 16);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 26);
             this.btnSave.TabIndex = 2;
@@ -254,85 +233,57 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "CarRegistrationID";
-            gridViewTextBoxColumn1.HeaderText = "CarRegistrationID";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "CarRegistrationID";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn1.Width = 96;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "CarRegistrationNo";
-            gridViewTextBoxColumn2.HeaderText = "Car Registration No";
-            gridViewTextBoxColumn2.Name = "CarRegistrationNo";
-            gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn2.Width = 107;
+            gridViewComboBoxColumn1.EnableExpressionEditor = false;
+            gridViewComboBoxColumn1.FieldName = "DocumentId";
+            gridViewComboBoxColumn1.HeaderText = "Document Name";
+            gridViewComboBoxColumn1.Name = "gvCboDocumentId";
+            gridViewComboBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewComboBoxColumn1.Width = 189;
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
             gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
-            gridViewDateTimeColumn1.FieldName = "DateOfRegistration";
+            gridViewDateTimeColumn1.FieldName = "IssueDate";
             gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             gridViewDateTimeColumn1.FormatString = "{0: dd/MM/yyyy}";
-            gridViewDateTimeColumn1.HeaderText = "Date Of Registration";
-            gridViewDateTimeColumn1.Name = "DateOfRegistration";
+            gridViewDateTimeColumn1.HeaderText = "Issue Date";
+            gridViewDateTimeColumn1.Name = "IssueDate";
             gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewDateTimeColumn1.Width = 107;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ChasissNo";
-            gridViewTextBoxColumn3.HeaderText = "Chasiss No";
-            gridViewTextBoxColumn3.Name = "ChasissNo";
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 107;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "EngineNo";
-            gridViewTextBoxColumn4.HeaderText = "Engine No";
-            gridViewTextBoxColumn4.Name = "EngineNo";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.Width = 107;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "MakerName";
-            gridViewTextBoxColumn5.HeaderText = "Maker Name";
-            gridViewTextBoxColumn5.Name = "MakerName";
-            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 107;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Model";
-            gridViewTextBoxColumn6.HeaderText = "Model";
-            gridViewTextBoxColumn6.Name = "Model";
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn6.Width = 107;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "MfgMonYear";
-            gridViewTextBoxColumn7.HeaderText = "Mfg Month Year";
-            gridViewTextBoxColumn7.Name = "MfgMonYear";
-            gridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn7.Width = 107;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Type";
-            gridViewTextBoxColumn8.HeaderText = "Type";
-            gridViewTextBoxColumn8.Name = "Type";
-            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn8.Width = 107;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "RTOName";
-            gridViewTextBoxColumn9.HeaderText = "RTO Name";
-            gridViewTextBoxColumn9.Name = "RTOName";
-            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn9.Width = 95;
+            gridViewDateTimeColumn1.Width = 189;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Validity";
+            gridViewTextBoxColumn1.HeaderText = "Validity";
+            gridViewTextBoxColumn1.Name = "Validity";
+            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn1.Width = 189;
+            gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
+            gridViewDateTimeColumn2.FieldName = "ExpireDate";
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn2.FormatString = "{0: dd/MM/yyyy}";
+            gridViewDateTimeColumn2.HeaderText = "Expiry Date";
+            gridViewDateTimeColumn2.Name = "ExpireDate";
+            gridViewDateTimeColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDateTimeColumn2.Width = 189;
+            gridViewDateTimeColumn3.EnableExpressionEditor = false;
+            gridViewDateTimeColumn3.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
+            gridViewDateTimeColumn3.FieldName = "RenewDate";
+            gridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn3.FormatString = "{0: dd/MM/yyyy}";
+            gridViewDateTimeColumn3.HeaderText = "Renew Date";
+            gridViewDateTimeColumn3.Name = "RenewDate";
+            gridViewDateTimeColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewDateTimeColumn3.Width = 191;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
+            gridViewComboBoxColumn1,
             gridViewDateTimeColumn1,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
+            gridViewTextBoxColumn1,
+            gridViewDateTimeColumn2,
+            gridViewDateTimeColumn3});
             this.radGridView1.MasterTemplate.EnableGrouping = false;
-            sortDescriptor1.PropertyName = "gvCboProductId";
+            sortDescriptor1.PropertyName = "gvCboDocumentId";
+            sortDescriptor2.PropertyName = "gvCboProductId";
             this.radGridView1.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor1});
+            sortDescriptor1,
+            sortDescriptor2});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
@@ -346,7 +297,7 @@
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "S";
             // 
-            // FrmCarRegistrationDetails
+            // FrmCarDocumentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -356,9 +307,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblHeaderTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmCarRegistrationDetails";
-            this.Text = "Car Registration";
-            this.Load += new System.EventHandler(this.FrmCarRegistrationDetails_Load);
+            this.Name = "FrmCarDocumentDetails";
+            this.Text = "Car Document Details";
+            this.Load += new System.EventHandler(this.FrmCarDocumentDetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -386,6 +337,5 @@
         internal System.Windows.Forms.Label lblContactPersonVal;
         internal System.Windows.Forms.Label lblMobileNoVal;
         internal System.Windows.Forms.Label lblEmailIdVal;
-        private System.Windows.Forms.Button btnAddDocuments;
     }
 }

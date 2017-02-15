@@ -79,5 +79,15 @@ namespace ANS.VehicleDocumentManagement.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kingstar_Pluto_B1_2_5_Ton_Single_Cab_Truck_Automobile_Lorry {
+            get {
+                object obj = ResourceManager.GetObject("Kingstar-Pluto-B1-2-5-Ton-Single-Cab-Truck-Automobile-Lorry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
