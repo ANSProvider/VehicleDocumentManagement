@@ -51,6 +51,10 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.lblDateOfRegVal = new System.Windows.Forms.Label();
+            this.lblCarRegisterationNoVal = new System.Windows.Forms.Label();
+            this.lblDateOfReg = new System.Windows.Forms.Label();
+            this.lblCarRegisterationNo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,6 +77,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblDateOfRegVal);
+            this.panel1.Controls.Add(this.lblCarRegisterationNoVal);
+            this.panel1.Controls.Add(this.lblDateOfReg);
+            this.panel1.Controls.Add(this.lblCarRegisterationNo);
             this.panel1.Controls.Add(this.lblEmailIdVal);
             this.panel1.Controls.Add(this.lblMobileNoVal);
             this.panel1.Controls.Add(this.lblCustomerNameVal);
@@ -92,7 +100,7 @@
             this.lblEmailIdVal.AutoSize = true;
             this.lblEmailIdVal.Font = new System.Drawing.Font("Calibri", 10F);
             this.lblEmailIdVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblEmailIdVal.Location = new System.Drawing.Point(630, 56);
+            this.lblEmailIdVal.Location = new System.Drawing.Point(519, 56);
             this.lblEmailIdVal.Name = "lblEmailIdVal";
             this.lblEmailIdVal.Size = new System.Drawing.Size(0, 17);
             this.lblEmailIdVal.TabIndex = 17;
@@ -122,7 +130,7 @@
             this.lblContactPersonVal.AutoSize = true;
             this.lblContactPersonVal.Font = new System.Drawing.Font("Calibri", 10F);
             this.lblContactPersonVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblContactPersonVal.Location = new System.Drawing.Point(630, 20);
+            this.lblContactPersonVal.Location = new System.Drawing.Point(519, 20);
             this.lblContactPersonVal.Name = "lblContactPersonVal";
             this.lblContactPersonVal.Size = new System.Drawing.Size(0, 17);
             this.lblContactPersonVal.TabIndex = 14;
@@ -132,7 +140,7 @@
             this.lblEmailId.AutoSize = true;
             this.lblEmailId.Font = new System.Drawing.Font("Calibri", 10F);
             this.lblEmailId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblEmailId.Location = new System.Drawing.Point(490, 56);
+            this.lblEmailId.Location = new System.Drawing.Point(379, 56);
             this.lblEmailId.Name = "lblEmailId";
             this.lblEmailId.Size = new System.Drawing.Size(53, 17);
             this.lblEmailId.TabIndex = 13;
@@ -154,7 +162,7 @@
             this.lblContactNo.AutoSize = true;
             this.lblContactNo.Font = new System.Drawing.Font("Calibri", 10F);
             this.lblContactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.lblContactNo.Location = new System.Drawing.Point(490, 20);
+            this.lblContactNo.Location = new System.Drawing.Point(379, 20);
             this.lblContactNo.Name = "lblContactNo";
             this.lblContactNo.Size = new System.Drawing.Size(93, 17);
             this.lblContactNo.TabIndex = 7;
@@ -297,6 +305,49 @@
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "S";
             // 
+            // lblDateOfRegVal
+            // 
+            this.lblDateOfRegVal.AutoSize = true;
+            this.lblDateOfRegVal.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblDateOfRegVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblDateOfRegVal.Location = new System.Drawing.Point(836, 56);
+            this.lblDateOfRegVal.Name = "lblDateOfRegVal";
+            this.lblDateOfRegVal.Size = new System.Drawing.Size(0, 17);
+            this.lblDateOfRegVal.TabIndex = 21;
+            // 
+            // lblCarRegisterationNoVal
+            // 
+            this.lblCarRegisterationNoVal.AutoSize = true;
+            this.lblCarRegisterationNoVal.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblCarRegisterationNoVal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblCarRegisterationNoVal.Location = new System.Drawing.Point(836, 20);
+            this.lblCarRegisterationNoVal.Name = "lblCarRegisterationNoVal";
+            this.lblCarRegisterationNoVal.Size = new System.Drawing.Size(0, 17);
+            this.lblCarRegisterationNoVal.TabIndex = 20;
+            // 
+            // lblDateOfReg
+            // 
+            this.lblDateOfReg.AutoSize = true;
+            this.lblDateOfReg.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblDateOfReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblDateOfReg.Location = new System.Drawing.Point(696, 56);
+            this.lblDateOfReg.Name = "lblDateOfReg";
+            this.lblDateOfReg.Size = new System.Drawing.Size(81, 17);
+            this.lblDateOfReg.TabIndex = 19;
+            this.lblDateOfReg.Text = "Date Of Reg.";
+            this.lblDateOfReg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCarRegisterationNo
+            // 
+            this.lblCarRegisterationNo.AutoSize = true;
+            this.lblCarRegisterationNo.Font = new System.Drawing.Font("Calibri", 10F);
+            this.lblCarRegisterationNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.lblCarRegisterationNo.Location = new System.Drawing.Point(696, 20);
+            this.lblCarRegisterationNo.Name = "lblCarRegisterationNo";
+            this.lblCarRegisterationNo.Size = new System.Drawing.Size(118, 17);
+            this.lblCarRegisterationNo.TabIndex = 18;
+            this.lblCarRegisterationNo.Text = "Car Registration No";
+            // 
             // FrmCarDocumentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,5 +388,9 @@
         internal System.Windows.Forms.Label lblContactPersonVal;
         internal System.Windows.Forms.Label lblMobileNoVal;
         internal System.Windows.Forms.Label lblEmailIdVal;
+        internal System.Windows.Forms.Label lblDateOfRegVal;
+        internal System.Windows.Forms.Label lblCarRegisterationNoVal;
+        internal System.Windows.Forms.Label lblDateOfReg;
+        internal System.Windows.Forms.Label lblCarRegisterationNo;
     }
 }

@@ -45,7 +45,24 @@ namespace ANS.VehicleDocumentManagement
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            ANSSetting.Current.GetAllSetting();
+            //ANSSetting.Current.GetAllSetting();
+        }
+
+        private void carRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCarRegistrationList frmCarRegistrationList = new FrmCarRegistrationList();
+            frmCarRegistrationList.MdiParent = this;
+            frmCarRegistrationList.WindowState = FormWindowState.Maximized;
+            frmCarRegistrationList.Show();
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsersDetail frmUsersDetail = new FrmUsersDetail();
+            frmUsersDetail.MdiParent = this;
+            frmUsersDetail.Show();
+
+
         }
     }
 }

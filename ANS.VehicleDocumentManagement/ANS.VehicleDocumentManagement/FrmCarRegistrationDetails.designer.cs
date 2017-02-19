@@ -263,7 +263,7 @@
             gridViewTextBoxColumn1.Width = 96;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "CarRegistrationNo";
-            gridViewTextBoxColumn2.HeaderText = "Car Registration No";
+            gridViewTextBoxColumn2.HeaderText = "Registration No";
             gridViewTextBoxColumn2.Name = "CarRegistrationNo";
             gridViewTextBoxColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn2.Width = 107;
@@ -272,7 +272,7 @@
             gridViewDateTimeColumn1.FieldName = "DateOfRegistration";
             gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             gridViewDateTimeColumn1.FormatString = "{0: dd/MM/yyyy}";
-            gridViewDateTimeColumn1.HeaderText = "Date Of Registration";
+            gridViewDateTimeColumn1.HeaderText = "Date Of Reg.";
             gridViewDateTimeColumn1.Name = "DateOfRegistration";
             gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDateTimeColumn1.Width = 107;

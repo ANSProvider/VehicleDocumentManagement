@@ -18,6 +18,22 @@ namespace ANS.VehicleDocumentManagement.BL
         [PetaPoco.Column]
         public Int64 CustomerID { get; set; }
         [PetaPoco.Column]
+
+
+        [PetaPoco.Ignore]
+        public String CarCustomerName
+        {
+            get
+            {
+                if (CarCustomerDetails != null)
+                    return CarCustomerDetails.CustomerName + " - " + CarCustomerDetails.ContactPerson;
+                else
+                    return string.Empty;
+
+            }
+        }
+
+
         public string CarRegistrationNo { get; set; }
         [PetaPoco.Column]
         public DateTime DateOfRegistration { get; set; }
@@ -50,6 +66,10 @@ namespace ANS.VehicleDocumentManagement.BL
         [PetaPoco.Ignore]
         public Int64? FilterCustomerID { get; set; }
 
+        [PetaPoco.Ignore]
+        public String FilterCustomerName { get; set; }
+
+      
         [PetaPoco.Ignore]
         public CustomerDetails CarCustomerDetails { get; set; }
 
@@ -94,16 +114,18 @@ namespace ANS.VehicleDocumentManagement.BL
         public List<CarRegistration> Load()
         {
             string mQuery = "";
-            mQuery = "Select * From tblCarRegistration Where 1=1 ";
+            mQuery = "Select * From tblCarRegistration Join  tblCustomerDetails on tblCarRegistration.CustomerID=tblCustomerDetails.CustomerID Where 1=1 ";
             if (FilterCarRegistrationID.HasValue)
-                mQuery += " And CarRegistrationID = '" + FilterCarRegistrationID + "'";
+                mQuery += " And tblCarRegistration.CarRegistrationID = '" + FilterCarRegistrationID + "'";
             if (FilterCustomerID.HasValue)
-                mQuery += " And CustomerID = '" + FilterCustomerID + "'";
+                mQuery += " And tblCarRegistration.CustomerID = '" + FilterCustomerID + "'";
             if (!string.IsNullOrEmpty(FilterCarRegistrationNo))
-                mQuery += " And CarRegistrationNo like '%" + FilterCarRegistrationNo + "%'";
+                mQuery += " And tblCarRegistration.CarRegistrationNo like '%" + FilterCarRegistrationNo + "%'";
 
+            if (!string.IsNullOrEmpty(FilterCustomerName))
+                mQuery += " And  tblCustomerDetails.CustomerName like '%" + FilterCustomerName + "%';";
 
-            return cDbConnection.Fetch<CarRegistration>(mQuery).ToList();
+            return cDbConnection.Fetch<CarRegistration,CustomerDetails>(mQuery).ToList();
 
         }
         public CarRegistration EditValue(long CarRegistrationID)

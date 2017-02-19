@@ -39,10 +39,15 @@ namespace ANS.VehicleDocumentManagement
 
         private void DispalyCarRegistrationDeatils()
         {
-            //lblContactPersonVal.Text = customerDetails.ContactPerson;
-            //lblCustomerNameVal.Text = customerDetails.CustomerName;
-            //lblMobileNoVal.Text = customerDetails.MobileNo;
-            //lblEmailIdVal.Text = customerDetails.EmailId;
+            if (carRegistration != null && carRegistration.CarCustomerDetails != null)
+            {
+                lblContactPersonVal.Text = carRegistration.CarCustomerDetails.ContactPerson;
+                lblCustomerNameVal.Text = carRegistration.CarCustomerDetails.CustomerName;
+                lblMobileNoVal.Text = carRegistration.CarCustomerDetails.MobileNo;
+                lblEmailIdVal.Text = carRegistration.CarCustomerDetails.EmailId;
+                lblCarRegisterationNoVal.Text = carRegistration.CarRegistrationNo;
+                lblDateOfRegVal.Text = carRegistration.DateOfRegistration.ToString();
+            }
         }
 
         private void FillDocument()

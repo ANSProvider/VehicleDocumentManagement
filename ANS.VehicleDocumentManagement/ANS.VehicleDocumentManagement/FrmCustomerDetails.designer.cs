@@ -305,7 +305,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtCustomerName;
         internal System.Windows.Forms.Label lblCustomerName;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
         private System.Windows.Forms.TextBox txtContactPerson;
         internal System.Windows.Forms.Label lblContactNo;
         private System.Windows.Forms.TextBox txtOfficeNo;
