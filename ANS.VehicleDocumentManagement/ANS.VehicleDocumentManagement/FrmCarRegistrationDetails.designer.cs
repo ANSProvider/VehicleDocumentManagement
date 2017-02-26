@@ -1,4 +1,6 @@
-﻿namespace ANS.VehicleDocumentManagement
+﻿using System;
+
+namespace ANS.VehicleDocumentManagement
 {
     partial class FrmCarRegistrationDetails
     {
@@ -240,6 +242,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(964, 303);
             this.panel3.TabIndex = 36;
+
             // 
             // radGridView1
             // 
@@ -270,8 +273,10 @@
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
             gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewDateTimeColumn1.FieldName = "DateOfRegistration";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn1.FormatString = "{0: dd/MM/yyyy}";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            gridViewDateTimeColumn1.CustomFormat = "dd/MMM/yyyy";
+            gridViewDateTimeColumn1.NullValue = DateTime.Now.Date;
+            gridViewDateTimeColumn1.FormatString = "{0: dd/MMM/yyyy}";
             gridViewDateTimeColumn1.HeaderText = "Date Of Reg.";
             gridViewDateTimeColumn1.Name = "DateOfRegistration";
             gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;

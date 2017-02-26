@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ANS.VehicleDocumentManagement")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Owner - Santosh Goilkar")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("ANS Software & Supply Chain Solution Pvt. Ltd.")]
 [assembly: AssemblyProduct("ANS.VehicleDocumentManagement")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
+[assembly: AssemblyCopyright("Copyright © ANS Group 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

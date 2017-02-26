@@ -250,8 +250,9 @@
             gridViewDateTimeColumn1.EnableExpressionEditor = false;
             gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewDateTimeColumn1.FieldName = "IssueDate";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn1.FormatString = "{0: dd/MM/yyyy}";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            gridViewDateTimeColumn1.CustomFormat = "dd/MMM/yyyy";
+            gridViewDateTimeColumn1.FormatString = "{0: dd/MMM/yyyy}";
             gridViewDateTimeColumn1.HeaderText = "Issue Date";
             gridViewDateTimeColumn1.Name = "IssueDate";
             gridViewDateTimeColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -265,8 +266,9 @@
             gridViewDateTimeColumn2.EnableExpressionEditor = false;
             gridViewDateTimeColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewDateTimeColumn2.FieldName = "ExpireDate";
-            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn2.FormatString = "{0: dd/MM/yyyy}";
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            gridViewDateTimeColumn2.CustomFormat = "dd/MMM/yyyy";
+            gridViewDateTimeColumn2.FormatString = "{0: dd/MMM/yyyy}";
             gridViewDateTimeColumn2.HeaderText = "Expiry Date";
             gridViewDateTimeColumn2.Name = "ExpireDate";
             gridViewDateTimeColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,8 +276,9 @@
             gridViewDateTimeColumn3.EnableExpressionEditor = false;
             gridViewDateTimeColumn3.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.ShortDate;
             gridViewDateTimeColumn3.FieldName = "RenewDate";
-            gridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn3.FormatString = "{0: dd/MM/yyyy}";
+            gridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            gridViewDateTimeColumn3.CustomFormat = "dd/MMM/yyyy";
+            gridViewDateTimeColumn3.FormatString = "{0: dd/MMM/yyyy}";
             gridViewDateTimeColumn3.HeaderText = "Renew Date";
             gridViewDateTimeColumn3.Name = "RenewDate";
             gridViewDateTimeColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,6 +307,7 @@
             this.radGridView1.Size = new System.Drawing.Size(964, 303);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "S";
+            this.radGridView1.CellValueChanged += new Telerik.WinControls.UI.GridViewCellEventHandler(this.radGridView1_CellValueChanged);
             // 
             // lblDateOfRegVal
             // 

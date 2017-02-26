@@ -43,6 +43,11 @@ namespace ANS.VehicleDocumentManagement
             radGridView1.Columns["CarCustomerName"].HeaderText = "Customer Name";
             radGridView1.Columns["CarRegistrationNo"].HeaderText = "Registration No";
             radGridView1.Columns["DateOfRegistration"].HeaderText = "Date Of Reg.";
+            radGridView1.Columns["DateOfRegistration"].DataType = typeof(DateTime);
+            radGridView1.Columns["DateOfRegistration"].FormatString = "{0:dd/MMM/yyyy}";
+            radGridView1.Columns["DateOfRegistration"].DataSourceNullValue = DateTime.Now.Date;
+
+
 
             radGridView1.Columns["ChasissNo"].HeaderText = "Chasiss No";
             radGridView1.Columns["EngineNo"].HeaderText = "Engine No";

@@ -86,6 +86,7 @@ namespace ANS.VehicleDocumentManagement
                 }
                 item.Save();
             }
+
         }
 
         private void btnAddDocuments_Click(object sender, EventArgs e)
@@ -95,10 +96,14 @@ namespace ANS.VehicleDocumentManagement
             if (radGridView1.SelectedRows.Count > 0)
             {
                 frmCarDocumentDetails.carRegistration = mList.Where(e1 => e1.CarRegistrationID == Convert.ToInt64(radGridView1.SelectedRows[0].Cells["CarRegistrationID"].Value)).FirstOrDefault();
+                if (frmCarDocumentDetails.carRegistration.CarCustomerDetails == null)
+                {
+                    frmCarDocumentDetails.carRegistration.CarCustomerDetails = customerDetails;
+                }
                 frmCarDocumentDetails.ShowDialog();
             }
         }
 
-
+      
     }
 }

@@ -21,14 +21,11 @@ namespace ANS.VehicleDocumentManagement
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+             Application.Exit();
+
         }
-
-
-
         private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             FrmCustomerDetails frmCustomerDetails = new FrmCustomerDetails();
             frmCustomerDetails.MdiParent = this;
             frmCustomerDetails.Show();
@@ -46,6 +43,17 @@ namespace ANS.VehicleDocumentManagement
         private void FrmMain_Load(object sender, EventArgs e)
         {
             //ANSSetting.Current.GetAllSetting();
+            if (LoginUser.Role.ToLower() != "admin")
+            {
+                userToolStripMenuItem.Visible = false;
+                documentMasterToolStripMenuItem.Visible = false;
+            }
+        }
+
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void carRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,8 +69,6 @@ namespace ANS.VehicleDocumentManagement
             FrmUsersDetail frmUsersDetail = new FrmUsersDetail();
             frmUsersDetail.MdiParent = this;
             frmUsersDetail.Show();
-
-
         }
 
         private void documentMasterToolStripMenuItem_Click(object sender, EventArgs e)

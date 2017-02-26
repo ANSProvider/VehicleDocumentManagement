@@ -129,9 +129,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+
             this.Name = "FrmMain";
             this.Text = "Vehicle Document Management By ANS Software";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -139,6 +142,10 @@
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+
+
+          
 
         }
         #endregion

@@ -46,7 +46,7 @@ namespace ANS.VehicleDocumentManagement
                 lblMobileNoVal.Text = carRegistration.CarCustomerDetails.MobileNo;
                 lblEmailIdVal.Text = carRegistration.CarCustomerDetails.EmailId;
                 lblCarRegisterationNoVal.Text = carRegistration.CarRegistrationNo;
-                lblDateOfRegVal.Text = carRegistration.DateOfRegistration.ToString();
+                lblDateOfRegVal.Text = carRegistration.DateOfRegistration.ToString("dd/MMM/yyyy");
             }
         }
 
@@ -104,5 +104,55 @@ namespace ANS.VehicleDocumentManagement
                 item.Save();
             }
         }
+
+        private void radGridView1_CellValueChanged(object sender, GridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                DocumentMaster cDocumentMaster = cListDocumentMaster.Where(e1 => e1.DocumentId == Convert.ToInt64(e.Value)).FirstOrDefault();
+                e.Row.Cells["Validity"].Value = cDocumentMaster.ValiditiyMonth;
+
+                if (e.Row.Cells["IssueDate"].Value == null)
+                {
+                    e.Row.Cells["IssueDate"].Value = DateTime.Now.Date;
+                }
+                if (e.Row.Cells["IssueDate"].Value != null && !string.IsNullOrEmpty(e.Row.Cells["IssueDate"].Value.ToString()))
+                {
+                    e.Row.Cells["ExpireDate"].Value = Convert.ToDateTime(e.Row.Cells["IssueDate"].Value.ToString()).AddMonths(Convert.ToInt32(e.Row.Cells["Validity"].Value));
+                }
+
+                if (e.Row.Cells["ExpireDate"].Value != null && !string.IsNullOrEmpty(e.Row.Cells["ExpireDate"].Value.ToString()))
+                {
+                    e.Row.Cells["RenewDate"].Value = Convert.ToDateTime(e.Row.Cells["ExpireDate"].Value.ToString()).AddDays(1);
+                }
+
+
+            }
+            else if (e.ColumnIndex == 3)
+            {
+             
+                if (e.Row.Cells["ExpireDate"].Value != null && !string.IsNullOrEmpty(e.Row.Cells["ExpireDate"].Value.ToString()))
+                {
+                    e.Row.Cells["RenewDate"].Value = Convert.ToDateTime(e.Row.Cells["ExpireDate"].Value.ToString()).AddDays(1);
+                }
+
+            }
+            else
+            {
+                if (e.Row.Cells["IssueDate"].Value != null && !string.IsNullOrEmpty(e.Row.Cells["IssueDate"].Value.ToString()))
+                {
+                    e.Row.Cells["ExpireDate"].Value = Convert.ToDateTime(e.Row.Cells["IssueDate"].Value.ToString()).AddMonths(Convert.ToInt32(e.Row.Cells["Validity"].Value));
+                }
+
+                if (e.Row.Cells["ExpireDate"].Value != null && !string.IsNullOrEmpty(e.Row.Cells["ExpireDate"].Value.ToString()))
+                {
+                    e.Row.Cells["RenewDate"].Value = Convert.ToDateTime(e.Row.Cells["ExpireDate"].Value.ToString()).AddDays(1);
+                }
+            }
+
+
+        }
+
+
     }
 }
