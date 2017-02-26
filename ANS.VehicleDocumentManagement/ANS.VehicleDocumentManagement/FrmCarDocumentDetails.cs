@@ -15,7 +15,7 @@ namespace ANS.VehicleDocumentManagement
     {
         public String Mode { get; set; }
         public CarRegistration carRegistration { get; set; }
-        public List<CustomerDetails> cListDocumentMaster = null;
+        public List<DocumentMaster> cListDocumentMaster = null;
         public FrmCarDocumentDetails()
         {
             InitializeComponent();
@@ -53,11 +53,11 @@ namespace ANS.VehicleDocumentManagement
         private void FillDocument()
         {
             GridViewComboBoxColumn mGridViewComboBoxColumn = (GridViewComboBoxColumn)radGridView1.Columns["gvCboDocumentId"];
-            CustomerDetails cProductMaster = new CustomerDetails(cSqlConnectionString);
-            cListDocumentMaster = cProductMaster.Load();
+            DocumentMaster cDocumentMaster = new DocumentMaster(cSqlConnectionString);
+            cListDocumentMaster = cDocumentMaster.Load();
             mGridViewComboBoxColumn.DataSource = cListDocumentMaster;
-            mGridViewComboBoxColumn.DisplayMember = "CustomerName";
-            mGridViewComboBoxColumn.ValueMember = "CustomerID";
+            mGridViewComboBoxColumn.DisplayMember = "DocumentName";
+            mGridViewComboBoxColumn.ValueMember = "DocumentID";
         }
 
         private void EditRecord()

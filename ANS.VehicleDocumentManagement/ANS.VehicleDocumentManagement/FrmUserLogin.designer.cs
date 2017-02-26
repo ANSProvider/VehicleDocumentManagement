@@ -70,7 +70,6 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(178, 22);
             this.txtUserName.TabIndex = 1;
-            this.txtUserName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // txtPassword
             // 
@@ -81,7 +80,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(178, 22);
             this.txtPassword.TabIndex = 3;
-            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Control_KeyUp);
             // 
             // label1
             // 
@@ -124,6 +122,7 @@
             // 
             // FrmUserLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

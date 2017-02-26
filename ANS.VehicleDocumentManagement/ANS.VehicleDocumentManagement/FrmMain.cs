@@ -64,5 +64,12 @@ namespace ANS.VehicleDocumentManagement
 
 
         }
+
+        private void documentMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDocumentMaster frmDocumentMaster = new FrmDocumentMaster();
+            frmDocumentMaster.MdiParent = this;
+            frmDocumentMaster.Show();
+        }
     }
 }

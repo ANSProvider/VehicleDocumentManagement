@@ -105,6 +105,12 @@
     <Compile Include="FrmUserLogin.designer.cs">
       <DependentUpon>FrmUserLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDocumentMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocumentMaster.Designer.cs">
+      <DependentUpon>FrmDocumentMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUsersDetail.cs">
       <SubType>Form</SubType>
     </Compile>

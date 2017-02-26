@@ -43,6 +43,7 @@
     <Compile Include="CarDocumentDetails.cs" />
     <Compile Include="CarRegistration.cs" />
     <Compile Include="CustomerDetails.cs" />
+    <Compile Include="DocumentMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users.cs" />
   </ItemGroup>
